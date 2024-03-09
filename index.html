@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the ReTro Forum</title>
+
+    <!-- daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- remix icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"rel="stylesheet" />
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            font-family: "Mulish", sans-serif;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- header design -->
+    <header class="px-4 max-w-[1200px] mx-auto py-12 flex items-center justify-between">
+        <div>
+            <img src="assets/logo.png" alt="">
+        </div>
+
+        <div class="flex items-center justify-center gap-3">
+            <div data-tip="Home" class="tooltip w-10 h-10 md:w-14 md:h-14 bg-[#12132D08] rounded-full flex items-center justify-center border-[1px] border-[#0307121A] cursor-pointer">
+                <a class="md:text-2xl text-[#12132D99]" href="#"><i class="ri-home-3-line"></i></a>
+            </div>
+            <div data-tip="Pencil" class="tooltip w-10 h-10 md:w-14 md:h-14 bg-[#12132D08] rounded-full flex items-center justify-center border-[1px] border-[#0307121A] cursor-pointer">
+            <a class="md:text-2xl text-[#12132D99]" href="#"><i class="ri-pencil-line"></i></a>
+            </div>
+            <div data-tip="Add Friends" class="tooltip w-10 h-10 md:w-14 md:h-14 bg-[#12132D08] rounded-full flex items-center justify-center border-[1px] border-[#0307121A] cursor-pointer">
+                <a class="md:text-2xl text-[#12132D99]" href="#"><i class="ri-user-add-line"></i></a>
+            </div>
+            <div data-tip="Flag" class="tooltip w-10 h-10 md:w-14 md:h-14 bg-[#12132D08] rounded-full flex items-center justify-center border-[1px] border-[#0307121A] cursor-pointer">
+                <a class="md:text-2xl text-[#12132D99]" href="#"><i class="ri-flag-line"></i></a>
+            </div>
+            <button class="text-[1rem] px-6 py-2 md:text-xl font-bold text-white md:px-9 md:py-4 rounded-full bg-[#797DFC]">Sign Up</button>
+        </div>
+    </header>
+
+    <main class="max-w-[1200px] mx-auto px-4">
+
+        <!-- loading spinner -->
+        <section>
+            <div id="loading__spinner" class="hidden">
+                <img class="fixed top-[50%] left-[50%] w-10" src="assets/circle-9360_512.gif" alt="">
+            </div>
+        </section>
+
+        <!-- hero design -->
+        <section class="w-full rounded-3xl bg-[#12132D] gap-6 bg-[url('assets/bgbanner.png')] bg-no-repeat bg-cover bg-bottom p-6 md:p-[6rem] md:flex items-center justify-between">
+            <div class="mb-6 sm:mb-6">
+                <h1 class="text-4xl md:text-[4rem] font-black text-white leading-[4rem]">Welcome to the <br><span class="text-[#797DFC]">ReTro</span> Forum</h1>
+                <p class="text-xl md:text-2xl font-medium text-[#FFFFFFCC] mt-5">Share your favorite opinion and win and wp <br>forum coffee mug!</p>
+                <div class="mt-6 flex items-center relative">
+                    <input id="input__field" class="text-[1rem] md:text-xl font-medium text-[#03071280] p-6 rounded-full w-full outline-none" type="text" placeholder="Search here anything">
+                    <button onclick="handleSearch()" id="search__btn" class="text-[1rem] md:text-xl font-bold text-white px-9 py-4 rounded-full bg-[#797DFC] absolute right-2">Search</button>
+                </div>
+            </div>
+            <div class="bg-white p-6 md:p-[3rem] rounded-3xl">
+                <div class="flex items-center justify-between gap-10 mb-4 mt-4">
+                    <span class="text-xl text-[#12132DCC] font-medium">Registered Users</span>
+                    <span class="text-xl text-[#12132DCC] font-medium">01</span>
+                </div>
+                <div class="flex items-center justify-between gap-10 mb-4 mt-4">
+                    <span class="text-xl text-[#12132DCC] font-medium">Forum</span>
+                    <span class="text-xl text-[#12132DCC] font-medium">05</span>
+                </div>
+                <div class="flex items-center justify-between gap-10 mb-4 mt-4">
+                    <span class="text-xl text-[#12132DCC] font-medium">Topics</span>
+                    <span class="text-xl text-[#12132DCC] font-medium">01</span>
+                </div>
+                <div class="flex items-center justify-between gap-10 mb-4 mt-4">
+                    <span class="text-xl text-[#12132DCC] font-medium">Replies</span>
+                    <span class="text-xl text-[#12132DCC] font-medium">01</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- let's discuss design -->
+        <section class="mt-8 md:mx-4 md:mt-[6.25rem]">
+            <div class="text-center">
+                <h2 class="text-2xl md:text-4xl font-black text-[#12132D]">Let's Discuss</h2>
+                <p class="text-base md:text-xl text-[#12132D99] font-normal mt-5">Yes, you can run unit tests and view the results directly within the app. The <br>integrated testing features allow for a streamlined.</p>
+            </div>
+
+            <div class="mt-12 gap-6 md:flex items-start">
+
+                <!-- discuss card design -->
+                <div id="discuss__container" class="w-full flex flex-col">
+
+                    <!-- <div class="w-full mb-6 rounded-xl bg-[#797DFC1A] p-9 flex gap-8">
+                        <div class="relative">
+                            <div class="w-16 h-16 rounded-lg flex items-center justify-center">
+                                <img class="w-full" src="assets/Ellipse 1.png" alt="">
+                            </div>
+                            <div id="active__status" class="p-2 bg-green-600 rounded-full absolute right-0 top-0"></div>
+                        </div>
+                        <div class="discuss__container">
+                            <div class="flex items-center gap-8">
+                                <span class="text-base font-bold text-[#12132DCC]"># Music</span>
+                                <div>
+                                    <span class="text-base font-bold text-[#12132DCC]">Author : </span>
+                                    <span class="text-base font-bold text-[#12132DCC]">Name here</span>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#12132D] mt-3">10 Kids Unaware of Their Halloween Costume</h3>
+                            <p class="text-base text-[#12132D99] font-medium mt-3">It's one thing to subject yourself to ha Halloween costume mishap because, hey that's your prerogative</p>
+                            <hr class="mt-5 border-t-[2px] border-dashed border-[#12132D40]">
+                            <div class="flex items-center justify-between mt-6">
+                                <div class="grid grid-cols-2 md:grid-cols-3 items-center justify-center gap-4">
+                                    <div class="flex items-center gap-2">
+                                        <i class="ri-message-3-line text-2xl text-[#12132D99]"></i>
+                                        <span class="text-base text-[#12132D99]">560</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i class="ri-eye-line text-2xl text-[#12132D99]"></i>
+                                        <span class="text-base text-[#12132D99]">1,568</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i class="ri-time-line text-2xl text-[#12132D99]"></i>
+                                        <span class="text-base text-[#12132D99]">5 min</span>
+                                    </div>
+                                </div>
+                                <div id="add__btn" class="flex items-center justify-center w-10 h-10 rounded-full bg-green-600 cursor-pointer">
+                                    <i class="ri-mail-open-fill text-2xl text-[#fff]"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+
+                <div id="read__container" class="w-full md:bg-[#12132D0D] rounded-xl p-6 lg:w-[50%]">
+                    <div class="flex items-center justify-between">
+                        <h3>Title</h3>
+                        <div class="flex items-center gap-3">
+                            <i class="ri-check-double-line text-green-600 text-xl"></i>
+                            <span>Mark as read</span>
+                            <span id="mark__count">0</span>
+                        </div>
+                    </div>
+
+                    <!-- <div class="flex items-center justify-between bg-white mt-5 rounded-lg p-4">
+                        <h4 class="text-[1rem] font-semibold text-[#12132D]">10 Kids Unaware of Their Halloween Costume</h4>
+                        <div class="flex items-center justify-between gap-1">
+                            <i class="ri-eye-line text-[#12132D99]"></i>
+                            <span class="text-base font-normal text-[#12132D99]">1,568</span>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </section>
+
+        <!-- join our form design -->
+        <section class="mt-24">
+            <div class="grid md:grid-cols-2 items-center justify-between w-full rounded-3xl bg-[#12132D] p-[5rem]">
+                <div>
+                    <h2 class="text-2xl md:text-4xl text-white font-black">Join Our Forum</h2>
+                    <p class="text-base md:text-xl text-[#FFFFFFCC] mt-4 mb-4">Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app.</p>
+                    <button class="text-xl md:text-xl font-bold text-white px-9 py-4 rounded-full bg-[#797DFC]">Registered Now</button>
+                </div>
+                <div class="mt-8 md:mt-0">
+                    <img src="assets/joinforum.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!-- latest post design -->
+        <section class="mt-24">
+            <div class="text-center">
+                <h3 class="text-2xl md:text-4xl font-black text-[#12132D]">Latest Posts</h3>
+                <p class="text-base md:text-xl font-normal text-[#12132D99] mt-5">Yes, you can run unit tests and view the results directly within the app. The <br>integrated testing features allow for a streamlined.</p>
+            </div>
+
+            <div id="post__container" class="gap-6 mt-12 px-4 grid md:grid-cols-3 items-center">
+
+                <!-- <div class="p-6 rounded-3xl border-[2px] border-[#0307121A]">
+                    <img class="w-full rounded-2xl" src="assets/images.jpeg" alt="">
+                    <div class="flex items-center gap-2 mt-6">
+                        <i class="ri-calendar-2-line text-[#12132D99] text-xl"></i>
+                        <span class="text-base font-normal text-[#12132D99]">29 January 2024</span>
+                    </div>
+                    <h3 class="text-[#12132D] text-xl font-extrabold mt-2">What will a mars habitat force that impact in our daily life!!!</h3>
+                    <p class="text-base text-[#12132D99] font-normal mt-2">Yes, you can run unit tests and view the results directly within the app.</p>
+                    <div class="flex items-center gap-4 mt-4">
+                        <div class="w-16 h-16 flex items-center justify-center rounded-lg bg-red-500">
+                            <img class="w-full rounded-2xl" src="assets/Ellipse 1.png" alt="">
+                        </div>
+                        <div>
+                            <h4 class="text-base font-bold text-[#12132D]">Cameron Williamson</h4>
+                            <span class="text-base font-normal text-[#12132D99]">Unknown</span>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- footer design -->
+    <footer class="mt-24">
+        <div class="w-full h-[480px] px-4 bg-[#12132D0D] flex flex-col items-center justify-center text-center space-y-6">
+            <img src="assets/logo.png" alt="">
+            <p class="text-base text-[#12132DB2] font-normal">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a <br>piece of classical Latin literature from 45 BC</p>
+            <div class="flex items-center gap-4">
+                <i class="ri-twitter-fill text-3xl"></i>
+                <i class="ri-facebook-fill text-3xl"></i>
+                <i class="ri-instagram-line text-3xl"></i>
+                <i class="ri-github-fill text-3xl"></i>
+            </div>
+            <hr class="w-full border-t-2 border-[#30325E1A]">
+            <span class="text-base font-normal text-[#12132D80]">2017, All Rights Reserved.</span>
+        </div>
+    </footer>
+
+    <!-- custom js -->
+    <script src="app.js"></script>
+</body>
+</html>
